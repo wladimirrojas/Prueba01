@@ -29,7 +29,6 @@ public class TazonController {
 
 	@PostMapping("/tazon")
 	public String registrarTazon(@Valid @ModelAttribute("tazon") Tazon tazon, BindingResult resultado, Model model) {
-
 		if (resultado.hasErrors()) {
 			model.addAttribute("mensaje", "Hay datos incorrectos, por favor intente nuevamente");
 			return "registrarTazon.jsp";
@@ -42,12 +41,10 @@ public class TazonController {
 
 	}
 	
-	@RequestMapping("mostrar")
+	@RequestMapping("/mostrar")
 	public String mostrar(Model model) {
 		List<Tazon> listaTazones = tazonService.findAll();
 		model.addAttribute("tazonesCapturados", listaTazones);
 		return "mostrarTazones.jsp";
 	}
 }
-
-

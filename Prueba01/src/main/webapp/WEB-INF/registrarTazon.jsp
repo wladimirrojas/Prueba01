@@ -19,7 +19,7 @@
 		<c:if test="${mensaje != null }">
 			<c:out value="${mensaje}"></c:out>
 		</c:if>
-		<form:form action="/registrar" method="post" modelAttribute="tazon">
+		<form:form action="/registrar/tazon" method="post" modelAttribute="tazon">
 			
 			<form:label path="nombre" >Nombre de taza: </form:label>
 			<form:input path="nombre" class="form-control" for="nombre"/>
@@ -33,9 +33,8 @@
 			<form:input type="number" class="form-control" path="altura" for="altura"/>
 			<br>
 			<br>
-			<td><a type ="submit" class="btn btn-primary" href="/registrar/mostrar" role="button">Guardar</a></td>	
+			<input type="submit" value="Guardar">
 			</form:form>
 	</div>
-
 </body>
 </html>
